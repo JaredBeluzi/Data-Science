@@ -14,3 +14,9 @@ https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html
 # Firefox
 When using the python module Jupyter Lab, you need a browser, in which the module can start.
 I highly recommend Firefox for this.
+# VS Code + Copilot
+Coding is much more efficient with an AI Tool like Copilot.
+For that reason install VS Code as an IDE and use Github Copilot.
+# ChatGPT
+When it comes to structural questions or brainstorming for ideas, ChatGPT is very good.
+It is also a good partner with Copilot to find the solution for coding problems.
