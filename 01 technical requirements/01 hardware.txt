@@ -1,8 +1,0 @@
-# 1. machine
-It is recommended to work on a strong remote server.
-You can rent space on a cloud server.
-
-
-# 2. os
-A linux version is recommended, because it makes installing and changing necessary programs and modules easier.
-Linux is better designed for programmers (imo).
