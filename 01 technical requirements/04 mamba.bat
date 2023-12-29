@@ -1,3 +1,6 @@
+:: show list of environments
+mamba env list
+
 :: create a new environment
 mamba create -n prod_env 
 
