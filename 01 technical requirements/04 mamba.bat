@@ -26,5 +26,6 @@ jupyter lab
 mamba list
 :: in jupyter lab most of the useful packages are automatically included, like pandas and numpy
 
-# some additional recommend packages are listet here
-mamba install seaborn
+:: some additional recommend packages are listet here
+mamba install seaborn &:: for visualization of data beyond matplotlib
+mamba install pyodbc &:: for importing data from MS SQL Server
