@@ -28,4 +28,5 @@ mamba list
 
 :: some additional recommend packages are listet here
 mamba install seaborn &:: for visualization of data beyond matplotlib
-mamba install sqlalchemy &:: for importing data from MS SQL Server and executing sql code in python
+mamba install pyodbc &:: for connections with MS SQL Server
+mamba install sqlalchemy &:: needs pyodbc. for importing data from MS SQL Server and executing sql code in python
