@@ -55,6 +55,6 @@ best packages to install
 - `mamba install jupyterlab -c conda-forge` in jupyter lab some other packages are automatically included, like pandas and numpy
 - `mamba install matplotlib` basic data visualisation
 - `mamba install seaborn`    for visualization of data beyond matplotlib
-- `mamba install sklearn`    contains statistical models
+- `mamba install scikit-learn`    contains statistical models
 - `mamba install pyodbc`     for connections with MS SQL Server
 - `mamba install sqlalchemy` needs pyodbc. for importing data from MS SQL Server and executing sql code in python
