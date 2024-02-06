@@ -17,7 +17,7 @@ engine_url = sa.engine.URL.create(
         username=USER,
         password=PASSWORD,
         database=DATABASE,
-        query=dict(driver=DRIVER, TrustServerCertificate='yes')
+        query=dict(driver=DRIVER, TrustServerCertificate='yes') # add Trusted_connection='yes' when working on a Windows machine
     )
 engine = sa.create_engine(engine_url, future=True, fast_executemany=True)
 
