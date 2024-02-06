@@ -4,7 +4,6 @@
 import pandas as pd
 import pyodbc
 import sqlalchemy as sa
-import os
 
 DRIVER = "ODBC Driver 18 for SQL Server"
 HOST = "XX.XX.XXX.XXX"
