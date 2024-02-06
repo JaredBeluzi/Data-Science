@@ -1,5 +1,4 @@
-
-# MS SQL Server --> DataFrame
+# MS SQL Server <-> DataFrame
 
 import pandas as pd
 import pyodbc
@@ -21,4 +20,8 @@ engine_url = sa.engine.URL.create(
     )
 engine = sa.create_engine(engine_url, future=True, fast_executemany=True)
 
+# importing data
 df = pd.read_sql(f"SELECT * FROM S_12345", engine)
+
+# exporting data
+df.to_sql('DS_Inflation', con=engine, if_exists='replace', index=False)
