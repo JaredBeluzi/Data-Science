@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # generate data
-x = np.linspace(0,5,101) # 0, 0.5, 1, ..., 4.5, 5
+x = np.linspace(0,5,101) # 0, 0.05, 0.1, ..., 4.95, 5
 y_11 = x**2
 y_12 = x**3
 y_21 = sin(x)
