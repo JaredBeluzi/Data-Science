@@ -5,7 +5,7 @@ import pyodbc
 import sqlalchemy as sa
 
 DRIVER = "ODBC Driver 18 for SQL Server"
-HOST = "XX.XX.XXX.XXX"
+HOST = "XX.XX.XXX.XXX" # use SELECT CONNECTIONPROPERTY('local_net_address') to get the IP
 DATABASE = "Ergebnisse"
 USER = "user_name"
 PASSWORD = "password"  # you can use os.environ['user_pwd'] to put this part into a local file
