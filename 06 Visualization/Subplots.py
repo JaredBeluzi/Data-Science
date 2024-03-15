@@ -11,6 +11,9 @@ y_22 = cos(x)
 y_31 = x/2
 y_32 = 1/x
 
+# plot
+plt.figure(figsize=(14, 6))
+
 # create 6 plots in grid with 3 rows and 2 columns
 # first row
 plt.subplot(3,2,1)
