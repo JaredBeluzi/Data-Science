@@ -178,21 +178,21 @@ class DataTransfer:
 
 
 @logger.catch
-def load_targetdir_vars(config_dict: {}) -> {}:
+def load_targetdir_vars(config_dict: {}) -> {}: # input is supposed to be dictionary and the function returns a dictionary
 
-    # check if a network share is used
-    targetdirs_vars = config_dict['targetdirs_vars']
+    targetdirs_vars = config_dict['targetdirs_vars'] # Extract targetdirs_vars from Configuration Dictionary:
 
+    # check if a network drive is used
     if targetdirs_vars['netdrive']:
 
-        # load paths for netdrive
+        # Extracts the network drive information such as the path, mount path, type, and name from mount_info.
         mount_info = targetdirs_vars['netdrive_mount']
         netdrive_path = mount_info['path']
         mount_path = mount_info['mountpath']
         netdrive_type = mount_info['type']
         netdrive_name = mount_info['name']
 
-        #  1.1) load network drive credentials
+        #  1.1) load network drive credentials from environmental file
         servers_crdtlspath = config_dict['servers_crdtlspath']
         netdrive_envfile = os.path.join(servers_crdtlspath, netdrive_name + '.env')
         netdrive_crdtls = EnvnLog.load_server_crdtls('netdrive',
@@ -200,18 +200,20 @@ def load_targetdir_vars(config_dict: {}) -> {}:
                                                      netdrive_envfile)
 
         # 1.2) Mount netdrive
-        netdrive_mntd = netdrvmnt.mount_netdrive(netdrive_type, netdrive_path, mount_path, **netdrive_crdtls)
-        if not netdrive_mntd:
+        netdrive_mntd = netdrvmnt.mount_netdrive(netdrive_type, netdrive_path, mount_path, **netdrive_crdtls) # try to mount netdrive
+        if not netdrive_mntd: # if mounting fails, log it
             logger.error('Mounting netdrive failed. See logs!')
 
+        # 1.3) Sets the path delimiter based on OS
         if platform.system() == 'Windows':
             path_delimiter = '\\'
         else:
             path_delimiter = '/'
+            
         # 2) transform network share paths to unix format
         targetdirs_vars_tmp = targetdirs_vars.copy()
         for k, v in targetdirs_vars_tmp.items():
-            if k.endswith('dirpath'):
+            if k.endswith('dirpath'): # For each item that ends with 'dirpath', transform the network share path to Unix format based on the netdrive_type
                 netdir_path = targetdirs_vars_tmp[k]
                 if netdrive_type == 'windows':
                     netdir_path = path_delimiter.join(netdir_path.split('\\'))
@@ -229,37 +231,43 @@ def load_targetdir_vars(config_dict: {}) -> {}:
 if __name__ == "__main__":
 
     # 0) Construct argparser to collect user arguments
-    # The description parameter provides a brief description of the program. This description is shown when the user runs the script with the -h or --help option.
-    # The formatter_class parameter specifies the formatting class for the help message. ArgumentDefaultsHelpFormatter is used to include default values for arguments in the help message.
-    arg_parser = argparse.ArgumentParser(description="SFTP-DataTransfer",  
-                                         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    arg_parser = argparse.ArgumentParser(description="SFTP-DataTransfer", # provides a brief description of the program. This description is shown when the user runs the script with the -h or --help option.
+                                         formatter_class=argparse.ArgumentDefaultsHelpFormatter) # specifies the formatting class for the help message. ArgumentDefaultsHelpFormatter is used to include default values for arguments in the help message.
     # The following line adds a required argument to the parser.
     arg_parser.add_argument("-cfg", "--config-filepath", #The argument can be provided as -cfg or --config-filepath.
                             action='store', # the argument expects a value, which will be stored as the value of the config_filepath variable
                             help="Local path to configuration yaml-file", # help provides a description of the argument, which is shown in the help message.
                             required=True) # required=True indicates that this argument must be provided by the user.
+    # The following line adds an optional flag to the parser.
+    arg_parser.add_argument("--csvimport-only", # The argument can be provided as --csvimport-only.
+                            action='store_true', #  this flag does not take a value. If the flag is present, the corresponding variable (csvimport_only) is set to True; otherwise, it is False.
+                            help="Import already downloaded csv file according to yaml-file") # help provides a description of the flag, shown in the help message.
 
-    arg_parser.add_argument("--csvimport-only", action='store_true',
-                            help="Import already downloaded csv file according to yaml-file")
+    # Example: When you use the code you can use it via this code:
+    # python script.py --config-filepath path/to/config.yaml
+    # python script.py --config-filepath path/to/config.yaml --csvimport-only
 
-
+    
     # 1) Collect user arguments and retrieve filepath
-    args = vars(arg_parser.parse_args())
-    yaml_file = args['config_filepath']
-    local_csvimport = args['csvimport_only']
+    args = vars(arg_parser.parse_args()) # parse the command-line arguments and convert the result to a dictionary.
+    yaml_file = args['config_filepath'] # contains argument from config-filepath, i.e. "path/to/config.yaml"
+    local_csvimport = args['csvimport_only'] # value for --csvimport-only. Is TRUE, if optional argument was delivered
 
-    path_filedir = os.path.dirname(os.path.abspath('__file__'))
-    yml_filepath = os.path.join(yaml_file)
+    path_filedir = os.path.dirname(os.path.abspath('__file__')) # Holds the directory path of the script, which could be useful for resolving relative paths within the script.
+    yml_filepath = os.path.join(yaml_file) # Holds the path to the configuration YAML file, which is provided as a command-line argument and will be used later in the script to load configuration settings.
 
+    
     # 2) load config data and start logging
-    cfgs_loggers = EnvnLog(yml_filepath)
-    cfgs_loggers.instantiate_loggers()
+    cfgs_loggers = EnvnLog(yml_filepath) # class defined in helpers.envandlogs. This class is designed to handle loading configuration settings and setting up logging based on the contents of the provided YAML file.
+    # This variable now holds the instance of the EnvnLog class. Through this instance, the script can access methods and properties defined in EnvnLog for handling configurations and logging.
+    cfgs_loggers.instantiate_loggers() # reads logging configurations from the YAML file and configures the logging system accordingly.
 
+    
     # 3) Load target directory pathes and mount netdrive if applicable
-    targetdirs_vars = load_targetdir_vars(cfgs_loggers.cfgs)
-    # local machine vars and network drive paths
+    targetdirs_vars = load_targetdir_vars(cfgs_loggers.cfgs) # Load infos from yml-file under "targetdir_vars". This includes local machine vars and network drive paths.
+    # This uses own function that formats the paths correctly
 
-    # set network logfile drive, if opted for. Explicitly add at last to be able to unregister it easily
+    # set network logfile drive, if argument exists in yml. Explicitly add at last to be able to unregister it easily
     netdrive_dirpath = targetdirs_vars.get('netdrive_logfile_dirpath')
     if netdrive_dirpath is not None:
         netdrive_logfile = netdrive_dirpath + cfgs_loggers.cfgs['transfer_name'] + '.log'
@@ -270,6 +278,7 @@ if __name__ == "__main__":
     transfer_name = cfgs_loggers.cfgs['transfer_name']
     servers_crdtlspath = cfgs_loggers.cfgs['servers_crdtlspath']
 
+    
     # 4) SFTP server settings
     sftpserver_vars = cfgs_loggers.cfgs['sftpservervars']
     sftp_servername = sftpserver_vars['servername']
@@ -279,9 +288,11 @@ if __name__ == "__main__":
     sftp_logindata = EnvnLog.load_server_crdtls('sftp', sftp_servername, sftp_envfile)
     sftp_logindata['hostkey'] = sftp_hostkey
 
+    
     # 5) DB Import vars
     sql_import_vars = cfgs_loggers.cfgs['import2sql']
 
+    
     # 6) Start Data Transfer
     data_trans = DataTransfer(targetdirs_vars)
     imported_files = []
@@ -290,7 +301,8 @@ if __name__ == "__main__":
 
     if local_csvimport:
 
-        # 7) Manual SQL Import for debugging and special files
+        
+    # 7) Manual SQL Import for debugging and special files
         unzip_folder = targetdirs_vars['local_unzip_dirpath']
         import_filepathlist = [os.path.join(unzip_folder, filename) for folder, dirs, files in os.walk(unzip_folder)
                                if folder == unzip_folder for filename in files]
@@ -301,17 +313,21 @@ if __name__ == "__main__":
         imported_files = data_trans.file2sql_import(import_filepathlist,
                                                     sql_import_vars['import_info'], servers_crdtlspath)
     else:
-        # 8) Download Files
+
+        
+    # 8) Download Files
         downld_files = data_trans.download_files(sftp_logindata, sftpserver_vars)
 
-        # # 9) Optional Unzip Files
+        
+    # 9) Optional Unzip Files
         if '.zip' in targetdirs_vars['file_extensions']:
             zip_files = [file for file in downld_files if file.endswith(('.zip'))]
             exctrd_files = data_trans.unzipper(zip_files, targetdirs_vars['local_unzip_dirpath'])
         else:
             exctrd_files = []
 
-        # 10) Optional Import files to SQL Database
+        
+    # 10) Optional Import files to SQL Database
         if sql_import_vars['import_data']:
 
             if not exctrd_files:
@@ -322,17 +338,21 @@ if __name__ == "__main__":
             imported_files = data_trans.file2sql_import(import_filepathlist,
                                                         sql_import_vars['import_info'], servers_crdtlspath)
 
+    
     # 11) Finish Data transfer and write result to log
     logger.info(
         f"File transfer '{transfer_name}' finished! {len(downld_files)} file(s) downloaded, "
         f"{len(exctrd_files)} successfully extracted. {len(imported_files)} files(s) imported to DB")
 
+    
     # 12) Unmount network drive if used
     if targetdirs_vars['netdrive']:
         if targetdirs_vars.get('netdrive_logfile_dirpath') is not None:
-            # 11.1) De-register network drive logfile logger, if used
+    
+    # 12.1) De-register network drive logfile logger, if used
             logger.remove(cfgs_loggers.logger_ids['netdrive_log'])
-        # 11.2) Unmount network drive
+    
+    # 12.2) Unmount network drive
         netdrive_unmounted = netdrvmnt.unmount_netdrive(targetdirs_vars['netdrive_mount']['type'],
                                                       targetdirs_vars['netdrive_mount']['mountpath'])
         if not netdrive_unmounted:
