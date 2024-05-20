@@ -1,0 +1,119 @@
+transfer_name: 'DAVASO Fruehdatenimport'
+servers_crdtlspath: "/var/dscode/Server_Crdtls"
+
+# in that path you can find a file 118SQDWH02.env with that content
+# 118SQDWH02_DOMAIN="BKKVBU"
+# 118SQDWH02_USERID="svcIntelligenceSFTP"
+
+sftpservervars:
+  remote_uri: "/test/kern/lei/zuzahlungen"
+  remote_archive_uri: "/test/kern/lei/zuzahlungen/Archiv"
+  servername: 'IServer'
+  server_hostkey: "IServered25123.pub"
+
+targetdirs_vars:
+  netdrive: True
+  netdrive_mount:
+    type: 'windows'
+    name: '118SQDWH02'
+    path: "\\\\118sqdwh02\\share"
+    mountpath: "/mnt/118sqdwh02-share"
+  netdrive_logfile_dirpath: "Dateiquellen\\wekis\\"
+  download_dirpath: "Dateiquellen\\wekis\\ab 2023 zip Archiv"
+  file_extensions:
+    - '.zip'
+  local_unzip_dirpath: "Dateiquellen\\wekis\\ab 2023 entpackt"
+
+logging:
+  mainlogfile_path: '/var/dscode/logs/DAVASO/'
+  logformat: '{time:DD.MM.YYYY HH:mm:ss} | <blue>DAVASO FILE TRANSFER</blue> | <cyan>Funktion: {function}</cyan> | <red>{level}</red> | {message}'
+  loglevel: DEBUG
+  rotation: '1 month'
+  delay: True
+  alertmeans:
+    type:
+    - 'slack'
+    - 'email'
+    email:
+      smtpHost: '118EX03.bkkvbu.local'
+      smtpPort: 25
+      smtpSSL: False
+      smtpTLS: False
+      useLogin: False
+      sender: 'svcCareReporting@bkk-vbu.de'
+      username: ''
+      password: ''
+      recipients:
+        - 'd.k@mkk.de'
+        - 'n.h@mkk.de'
+        - 'a.k@mkk.de'
+    slack:
+      webhook_url: 'https://hooks.slack.com/services/TB7TK18DD/B04Q126A5M2/xUUXKLAJFLKFAHKL'
+
+import2sql:
+  import_data: True
+  import_info:
+    - filename_ident: '_Gezahlt_'
+      file_ext: '.txt'
+      csv_readinfo:
+        encoding: 'iso8859_15'
+        sep: ';'
+        decimal: ','
+        thousands: '.'
+        header: 0
+        na_values: [ ' ' ]
+        chunksize: 500000
+        cols_dtypes: {'SGS': ['VARCHAR', 1], 'LER': ['BIGINT'], 'RecNr': ['VARCHAR', 100],
+                            'RecDatum': ['DATETIME'], 'EingDatum': ['DATETIME'], 'RecBtr': ['DECIMAL', 18, 2],
+                            'ZahlDatum': ['DATETIME'], 'PicNr': ['BIGINT'], 'eKVNr': ['VARCHAR', 12],
+                            'VoDatum': ['DATETIME'], 'BelBtr': ['DECIMAL', 18, 2], 'BelZuz': ['DECIMAL', 18, 2],
+                            'ZuzPauschal': ['DECIMAL', 18, 2], 'BtrAbZus': ['DECIMAL', 18, 2], 'GNM': ['VARCHAR', 100],
+                            'Pos': ['INT'], 'APN': ['VARCHAR', 20], 'APNText': ['VARCHAR', 500],
+                            'Faktor': ['DECIMAL', 18, 2], 'PosBtr': ['DECIMAL', 18, 2], 'PosZuz': ['DECIMAL', 18, 2],
+                            'Termin': ['DATETIME'], 'Sachkonto': ['INT'], 'ExpDatum': ['DATETIME'],
+                            'ZahlNr': ['VARCHAR', 50], 'PrecNr': ['BIGINT'], 'Verweis': ['BIGINT'],
+                            'LER_Belegnummer': ['VARCHAR', 10], 'Zahlungsziel': ['DATETIME'] }
+      sql_writeinfo:
+        flatten_indexcols:
+        write_index: False
+        table_exists: 'append'
+        target_tablename: 'TP5Import_Gezahlt'
+        target_schema: 'dbo'
+      sql_serverinfo:
+        sql_type: 'mssql'
+        servername: "118KS04-04"
+        database: 'DB_Davaso'
+        driver: 'ODBC Driver 18 for SQL Server'
+        TrustServerCertificate: 'yes'
+    - filename_ident: '_Original_'
+      file_ext: '.txt'
+      csv_readinfo:
+        encoding: 'iso8859_15'
+        sep: ';'
+        decimal: ','
+        thousands: '.'
+        header: 0
+        na_values: [ ' ' ]
+        chunksize: 500000
+        cols_dtypes: {'SGS': ['VARCHAR', 1], 'LER': ['BIGINT'], 'RecNr': ['VARCHAR', 100],
+                            'RecDatum': ['DATETIME'], 'EingDatum': ['DATETIME'], 'RecBtr': ['DECIMAL', 18, 2],
+                            'ZahlDatum': ['DATETIME'], 'PicNr': ['BIGINT'], 'eKVNr': ['VARCHAR', 12],
+                            'VoDatum': ['DATETIME'], 'BelBtr': ['DECIMAL', 18, 2], 'BelZuz': ['DECIMAL', 18, 2],
+                            'ZuzPauschal': ['DECIMAL', 18, 2], 'BtrAbZus': ['DECIMAL', 18, 2], 'GNM': ['VARCHAR', 100],
+                            'Pos': ['INT'], 'APN': ['VARCHAR', 20], 'APNText': ['VARCHAR', 500],
+                            'Faktor': ['DECIMAL', 18, 2], 'PosBtr': ['DECIMAL', 18, 2], 'PosZuz': ['DECIMAL', 18, 2],
+                            'Termin': ['DATETIME'], 'Sachkonto': ['INT'], 'ExpDatum': ['DATETIME'],
+                            'ZahlNr': ['VARCHAR', 50], 'PrecNr': ['BIGINT'], 'Verweis': ['BIGINT'],
+                            'LER_Belegnummer': ['VARCHAR', 10], 'Zahlungsziel': ['DATETIME']}
+      sql_writeinfo:
+        flatten_indexcols:
+        write_index: False
+        table_exists: 'append'
+        target_tablename: 'TP5Import_Original'
+        target_schema: 'dbo'
+      sql_serverinfo:
+        sql_type: 'mssql'
+        servername: "118KS04-04"
+        database: 'DB_Davaso'
+        driver: 'ODBC Driver 18 for SQL Server'
+        TrustServerCertificate: 'yes'
