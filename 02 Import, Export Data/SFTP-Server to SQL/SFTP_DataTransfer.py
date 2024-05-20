@@ -8,6 +8,7 @@ import platform
 import zipfile
 
 import sys
+# This line effectively allows the script to import modules from the parent directory of the script's directory. 
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 
 from helpers.envandlogs import ConfigLoadersandLogging as EnvnLog
@@ -15,7 +16,8 @@ import helpers.pandas2sql as pdsqlalch
 import helpers.netdrive_mount as netdrvmnt
 from connections.connection_sftp import SftpHandler
 
-
+# Some code is bundled in the class DataTransfer rather than just writing it down. This has some advantages.
+# It makes it easier to extend the code for example, which was necessary multiple times in this case
 class DataTransfer:
 
     def __init__(self, targetdirs_vars: {str}):
@@ -227,10 +229,15 @@ def load_targetdir_vars(config_dict: {}) -> {}:
 if __name__ == "__main__":
 
     # 0) Construct argparser to collect user arguments
-    arg_parser = argparse.ArgumentParser(description="SFTP-DataTransfer",
+    # The description parameter provides a brief description of the program. This description is shown when the user runs the script with the -h or --help option.
+    # The formatter_class parameter specifies the formatting class for the help message. ArgumentDefaultsHelpFormatter is used to include default values for arguments in the help message.
+    arg_parser = argparse.ArgumentParser(description="SFTP-DataTransfer",  
                                          formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    arg_parser.add_argument("-cfg", "--config-filepath", action='store',
-                            help="Local path to configuration yaml-file", required=True)
+    # The following line adds a required argument to the parser.
+    arg_parser.add_argument("-cfg", "--config-filepath", #The argument can be provided as -cfg or --config-filepath.
+                            action='store', # the argument expects a value, which will be stored as the value of the config_filepath variable
+                            help="Local path to configuration yaml-file", # help provides a description of the argument, which is shown in the help message.
+                            required=True) # required=True indicates that this argument must be provided by the user.
 
     arg_parser.add_argument("--csvimport-only", action='store_true',
                             help="Import already downloaded csv file according to yaml-file")
