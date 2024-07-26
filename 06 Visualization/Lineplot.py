@@ -10,7 +10,7 @@ y2 = np.sin(x)
 # plot
 plt.figure(figsize=(14, 6))
 plt.plot(x, y1, 'r-', label='f(x)=x^2') # ex. separate index and values
-plt.plot(df.index, df['Betrag'], 'g-', label='Betrag') # ex. DataFrame
+plt.plot(df['Betrag'], 'g-', label='Betrag') # ex. DataFrame
 plt.title('Example Plots')
 plt.xlabel('x-axis')
 plt.ylabel('y-axis')
