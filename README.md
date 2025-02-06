@@ -12,3 +12,4 @@
 - [Wie viel ist NULL?](Code/Wie%20viel%20ist%20NULL.py)
 ## 5. Datenvisualisierung
 - [Boxplot](Code/Boxplot.md)
+- [Histogramm](Code/Histogramm.md)
