@@ -11,6 +11,7 @@
 - [Python Basics](Code/Python%20Basics%20Datenanalyse.py)
 - [Wie viel ist NULL?](Code/Wie%20viel%20ist%20NULL.py)
 ## 5. Datenvisualisierung
+- [Scatterplot](Code/Scatterplot.md)
+- [Lineplot](Code/Lineplot.md)
 - [Boxplot](Code/Boxplot.md)
 - [Histogramm](Code/Histogramm.md)
-- [Lineplot](Code/Lineplot.md)
