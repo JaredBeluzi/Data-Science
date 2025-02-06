@@ -11,5 +11,5 @@ plt.figure(figsize=(14, 6))
 plt.boxplot(x, vert=True, patch_artist=True)
 plt.show()
 ```
-# Ausgabe
+# Ergebnis
 ![Boxplot Beispiel](https://github.com/JaredBeluzi/Data-Science/blob/main/Bilder/Boxplot.png)
