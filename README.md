@@ -10,6 +10,7 @@
 ## 4. Datenanalyse
 - [Python Basics](Code/Python%20Basics%20Datenanalyse.py)
 - [Wie viel ist NULL?](Code/Wie%20viel%20ist%20NULL.py)
+- [Einflussfaktoren](Inhalt/Einflussfaktoren.md)
 ## 5. Datenvisualisierung
 - [Scatterplot](Code/Scatterplot.md)
 - [Lineplot](Code/Lineplot.md)
