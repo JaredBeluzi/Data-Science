@@ -5,3 +5,6 @@
 ## 2. Import + Export
 - [SQL Server <--> DataFrame](Code/SQL%20Server%20%3C--%3E%20Python%20DataFrame.py)
 - [csv <--> DataFrame](Code/csv%20%3C--%3E%20Python%20DataFrame.py)
+## 3. Datenverarbeitung
+## 4. Datenanalyse
+- [Python Basics](Code/Python%20Basics%20Datenanalyse.py)
