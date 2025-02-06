@@ -1,4 +1,4 @@
-Code
+# Code
 ```
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,5 +10,5 @@ x = np.random.normal(170, 10, 250)
 plt.figure(figsize=(14, 6))
 plt.hist(x)
 ```
-Ergebnis
-![Histogramm](Bilder/Histogramm.png)
+# Ergebnis
+![Histogramm](https://github.com/JaredBeluzi/Data-Science/blob/main/Bilder/Histogramm.png)
