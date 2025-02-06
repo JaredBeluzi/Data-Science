@@ -12,4 +12,4 @@ plt.boxplot(x, vert=True, patch_artist=True)
 plt.show()
 ```
 # Ausgabe
-![Boxplot Beispiel](Bilder/Boxplot.png)
+![Boxplot Beispiel](https://github.com/JaredBeluzi/Data-Science/blob/main/Bilder/Boxplot.png)
