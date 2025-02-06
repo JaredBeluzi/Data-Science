@@ -10,6 +10,7 @@
 - [T-SQL CREATE TABLE](Code/CREATE%20TABLE.sql)
 - [T-SQL INSERT INTO](Code/INSERT%20INTO.sql)
 - [T-SQL PIVOT](Code/Pivot.sql)
+- [T-SQL Datumsliste erzeugen](Code/Datumsliste%20erzeugen.sql)
 ## 4. Datenanalyse
 - [Python Basics](Code/Python%20Basics%20Datenanalyse.py)
 - [Wie viel ist NULL?](Code/Wie%20viel%20ist%20NULL.py)
