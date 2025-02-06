@@ -15,3 +15,4 @@
 - [Lineplot](Code/Lineplot.md)
 - [Boxplot](Code/Boxplot.md)
 - [Histogramm](Code/Histogramm.md)
+- [Subplots](Code/Subplots.md)
