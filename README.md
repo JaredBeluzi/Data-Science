@@ -16,3 +16,7 @@
 - [Boxplot](Code/Boxplot.md)
 - [Histogramm](Code/Histogramm.md)
 - [Subplots](Code/Subplots.md)
+## 6. Regressionsprobleme
+- [Polynomial](Code/Polynomregression.md)
+## 7. Klassifikationsprobleme
+## 8. Zeitreihen
