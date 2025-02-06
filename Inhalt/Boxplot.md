@@ -12,3 +12,4 @@ plt.boxplot(x, vert=True, patch_artist=True)
 plt.show()
 ```
 # Ausgabe
+![Boxplot Beispiel](Bilder/Boxplot.png)
