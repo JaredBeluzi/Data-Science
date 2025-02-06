@@ -9,3 +9,4 @@
 - [Python Basics](Code/Python%20Basics%20Datenverarbeitung.py)
 ## 4. Datenanalyse
 - [Python Basics](Code/Python%20Basics%20Datenanalyse.py)
+- [Wie viel ist NULL?](Code/Wie%20viel%20ist%20NULL.py)
