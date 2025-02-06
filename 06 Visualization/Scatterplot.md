@@ -1,3 +1,5 @@
+# Code
+```
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -10,3 +12,6 @@ plt.scatter(x, y)
 plt.xlabel('x-axis')
 plt.ylabel('y-axis')
 plt.show()
+```
+# Ergebnis
+![Scatterplot](https://github.com/JaredBeluzi/Data-Science/blob/main/Bilder/Scatterplot.png)
