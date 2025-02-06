@@ -13,3 +13,4 @@
 ## 5. Datenvisualisierung
 - [Boxplot](Code/Boxplot.md)
 - [Histogramm](Code/Histogramm.md)
+- [Lineplot](Code/Lineplot.md)
