@@ -1,3 +1,5 @@
+# Code
+```
 import matplotlib.pyplot as plt
 import numpy as np
 #from matplotlib.dates import DateFormatter
@@ -26,3 +28,6 @@ plt.ticklabel_format(axis='y', style='plain') # removes scientific notation of y
 
 plt.legend(loc='upper right', fontsize='large')
 plt.show()
+```
+# Ergebnis
+![Lineplot](https://github.com/JaredBeluzi/Data-Science/blob/main/Bilder/Lineplot.png)
