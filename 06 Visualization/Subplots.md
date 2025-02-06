@@ -1,3 +1,5 @@
+# Code
+```
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -34,3 +36,6 @@ plt.subplot(3,2,6)
 plt.plot(x,y_32, 'g-.')
 
 plt.show()
+```
+# Ergebnis
+![Subplots](https://github.com/JaredBeluzi/Data-Science/blob/main/Bilder/Subplots.png)
