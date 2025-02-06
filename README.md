@@ -8,6 +8,7 @@
 ## 3. Datenverarbeitung
 - [Python Basics](Code/Python%20Basics%20Datenverarbeitung.py)
 - [T-SQL CREATE TABLE](Code/CREATE%20TABLE.sql)
+- [T-SQL IF EXISTS](Code/IF%20EXISTS.sql)
 - [T-SQL INSERT INTO](Code/INSERT%20INTO.sql)
 - [T-SQL RANKING](Code/RANKING.sql)
 - [T-SQL PIVOT](Code/Pivot.sql)
