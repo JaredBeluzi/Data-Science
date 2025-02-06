@@ -1,3 +1,5 @@
+# Code
+```
 # transform df to x, y
 y = df['target_col'].values
 n = y.size
@@ -16,3 +18,6 @@ plt.plot(x, y, label='data')
 plt.plot(x_poly, y_poly, label='prediction')
 plt.legend()
 plt.show()
+```
+# Ergebnis
+![Polynomregression](https://github.com/JaredBeluzi/Data-Science/blob/main/Bilder/Polynomregression.png)
