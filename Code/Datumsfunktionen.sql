@@ -6,6 +6,19 @@ MONTH('2014/03/31 10:05') = 3
 DAY('2014/03/31 10:05') = 31
 DATEPART(second, '2014/04/28 09:49:12') -- = 12 (integer)
 DATENAME(month, '2014/04/28 09:49:12') -- = April
+  
+●	millisecond, ms
+●	second, ss, s
+●	minute, mi, n
+●	hour, hh
+●	day, dy, y
+●	week, ww, wk
+●	month, mm, m
+●	year, yyyy, yy
+●	dayofyear
+●	weekday, dw, w
+●	quarter, qq, q
+
 
 GetDate() -- heutiges Datum 2014-05-01 15:29:59.917
 
