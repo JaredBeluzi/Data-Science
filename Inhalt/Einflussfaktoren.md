@@ -8,6 +8,10 @@ Falls die Spalte aus fachlicher Sicht relevant ist, ist sie das wahrscheinlich a
 - Konsistenz der Daten mit anderen Einflussfaktoren prüfen
 - Verteilung der Werte prüfen
 
+# Zeitliche Verzögerung in Daten
+Klären wie lange es dauert bis man Daten erhält.
+Falls es 90 Tage dauert bis man Diagnosen erhält, dann muss man das auch bei den Trainingsdaten nachstellen.
+
 # Einfluss auf Zielvariable
 - Korrelation mit Zielvariable (gut, falls hoch)
   - Pearson Korrelation für numerische Werte
