@@ -14,6 +14,7 @@
 - [T-SQL INSERT INTO](Code/INSERT%20INTO.sql)
 - [T-SQL RANKING](Code/RANKING.sql)
 - [T-SQL PIVOT](Code/Pivot.sql)
+- [T-SQL Textspalte aggregieren](Code/Textspalte%20aggregieren.sql)
 - [T-SQL Datumsliste erzeugen](Code/Datumsliste%20erzeugen.sql)
 ## 4. Datenanalyse
 - [Python Basics](Code/Python%20Basics%20Datenanalyse.py)
