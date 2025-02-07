@@ -12,7 +12,8 @@
 |Tabelle erzeugen          |[IF EXISTS](Code/IF%20EXISTS.sql)<br/>[CREATE TABLE](Code/CREATE%20TABLE.sql)                             |                                                                       |
 |Tabelle ändern            |[PRIMARY KEY](Code/PRIMARY%20KEY.sql)<br/>[Spalte ändern](Code/Spalte%20%C3%A4ndern.sql)                  |                                                                       |
 |Tabellen matchen          |[uneindeutige Matches](Code/uneindeutige%20Matches.sql)<br/>[RANKING](Code/RANKING.sql)                   |                                                                       |
-|Aggregieren               |[PIVOT](Code/Pivot.sql)<br/>[Textspalte aggregieren](Code/Textspalte%20aggregieren.sql)                   |                                                                       |
+|Spaltenfunktionen         |[erster Tag der Woche](Code/erster%20Tag%20der%20Woche.sql)                                               |                                                                       |
+|Spalten aggregieren       |[PIVOT](Code/Pivot.sql)<br/>[Textspalte aggregieren](Code/Textspalte%20aggregieren.sql)                   |                                                                       |
 |Daten erzeugen            |[Datumsliste](Code/Datumsliste%20erzeugen.sql)                                                            |                                                                       |
 ## 4. Datenanalyse
 - [Python Basics](Code/Python%20Basics%20Datenanalyse.py)
