@@ -14,24 +14,28 @@ https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html
 
 ## Entwicklungsumgebung erstellen, ändern und löschen
 ```
-mamba env list                  # show list of environments 
-mamba create -n env_name        # create environment
-mamba activate env_name         # activate environment
-mamba deactivate                # deactivate environment 
-mamba install -n env_name jupyterlab -c conda-forge    # install a python package inside an environment from the outside
-mamba update -n env_name        # all update all packages inside an environment
-mamba env remove -n env_name    # delete environment
+mamba env list                  # Liste der environments 
+mamba create -n env_name        # erstelle environment
+mamba activate env_name         # aktiviere environment
+mamba deactivate                # deaktiviere environment 
+mamba install -n env_name jupyterlab -c conda-forge    # installiere python package in environment außerhalb des environments
+mamba update -n env_name        # update alle packages in environment
+mamba env remove -n env_name    # lösche environment
 ```
 
-## working inside an enviroment (after activating an env this only affects the env itself) 
-- `mamba install jupyterlab -c conda-forge` you can install packages 
-- `jupyter lab`                             you can start jupyter lab like this
+## in Entwicklungsumgebung arbeiten (beinfluss nur das aktivierte env) 
+```
+mamba install jupyterlab -c conda-forge`  # installiere package innerhalb environment
+jupyter lab                               # starte jupyter lab in environment
+```
 
 ## best packages to install
-- `mamba list`              shows list of packages installed
-- `mamba install jupyterlab -c conda-forge` in jupyter lab some other packages are automatically included, like pandas and numpy
-- `mamba install matplotlib` basic data visualisation
-- `mamba install seaborn`    for visualization of data beyond matplotlib
-- `mamba install scikit-learn`    contains statistical models
-- `mamba install pyodbc`     for connections with MS SQL Server
-- `mamba install sqlalchemy` needs pyodbc. for importing data from MS SQL Server and executing sql code in python
+```
+mamba list                               # Liste installierter packages
+mamba install jupyterlab -c conda-forge  # beinhaltet pandas und numpy
+mamba install matplotlib                 # basic Visualisierungen
+mamba install seaborn                    # erweiterte Visualisierungen
+mamba install scikit-learn               # statistische Modelle
+mamba install pyodbc                     # für Verbindung zwischen Python und SQL Server
+mamba install sqlalchemy                 # braucht pyodbc, Für Datenaustausch zwischen Python und SQL Server
+```
