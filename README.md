@@ -8,11 +8,11 @@
 ## 3. Datenverarbeitung
 |T-SQL|Python|
 |---|---|
+|Basics                                     | [Python Basics](Code/Python%20Basics%20Datenverarbeitung.py) |
 |[CREATE TABLE](Code/CREATE%20TABLE.sql)    | right-aligned |
 | col 2 is      | centered      |
 | zebra stripes | are neat      |
-- [Python Basics](Code/Python%20Basics%20Datenverarbeitung.py)
-- [T-SQL CREATE TABLE](Code/CREATE%20TABLE.sql)
+
 - [T-SQL IF EXISTS](Code/IF%20EXISTS.sql)
 - [T-SQL PRIMARY KEY](Code/PRIMARY%20KEY.sql)
 - [T-SQL Spalte ändern](Code/Spalte%20%C3%A4ndern.sql)
