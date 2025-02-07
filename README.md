@@ -31,6 +31,7 @@
 ## 7. Klassifikationsprobleme
 ## 8. Zeitreihen
 ## 9. Automatisierung
+- [cronjobs](Code/cronjobs.sh)
 ## 10. Monitoring
 - [Win RAM](https://github.com/JaredBeluzi/Windows-RAM-Monitoring)
 - [Win CPU](https://github.com/JaredBeluzi/Windows-CPU-Monitoring)
