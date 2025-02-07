@@ -1,7 +1,7 @@
 # Inhaltsverzeichnis
 ## 1. Vorbereitung
 - [Hardware und Software](Inhalt/Hardware%20und%20Software.md)
-- [Linux commands](Code/Linux%20Basics.sh)
+- [Linux commands](Code/Linux%20Basic%20Commands.sh)
 - [mamba](Code/mamba.md)
 ## 2. Import + Export
 - [SQL Server <--> DataFrame](Code/SQL%20Server%20%3C--%3E%20Python%20DataFrame.py)
