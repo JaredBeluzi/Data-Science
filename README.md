@@ -10,6 +10,7 @@
 - [T-SQL CREATE TABLE](Code/CREATE%20TABLE.sql)
 - [T-SQL IF EXISTS](Code/IF%20EXISTS.sql)
 - [T-SQL PRIMARY KEY](Code/PRIMARY%20KEY.sql)
+- [T-SQL Spalte ändern](Code/Spalte%20%C3%A4ndern.sql)
 - [T-SQL INSERT INTO](Code/INSERT%20INTO.sql)
 - [T-SQL RANKING](Code/RANKING.sql)
 - [T-SQL PIVOT](Code/Pivot.sql)
