@@ -9,8 +9,8 @@
 |T-SQL|Python|
 |---|---|
 |Basics                                      |                 [Basics](Code/Python%20Basics%20Datenverarbeitung.py) |
-|[CREATE TABLE](Code/CREATE%20TABLE.sql)                       |    |
-|[IF EXISTS](Code/IF%20EXISTS.sql)                             |    |
+|[CREATE TABLE](Code/CREATE%20TABLE.sql)<br/>[IF EXISTS](Code/IF%20EXISTS.sql)                        |    |
+|                            |    |
 |[PRIMARY KEY](Code/PRIMARY%20KEY.sql)                         |    |
 |[Spalte ändern](Code/Spalte%20%C3%A4ndern.sql)                |    |
 |[RANKING](Code/RANKING.sql)                                   |    |
