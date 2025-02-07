@@ -6,9 +6,9 @@
 - [SQL Server <--> DataFrame](Code/SQL%20Server%20%3C--%3E%20Python%20DataFrame.py)
 - [csv <--> DataFrame](Code/csv%20%3C--%3E%20Python%20DataFrame.py)
 ## 3. Datenverarbeitung
-| Tables        | Are           | Cool  |
+| T-SQL         | Are           | Cool  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
+| [CREATE TABLE](Code/CREATE%20TABLE.sql)      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 - [Python Basics](Code/Python%20Basics%20Datenverarbeitung.py)
