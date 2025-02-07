@@ -8,20 +8,16 @@
 ## 3. Datenverarbeitung
 |T-SQL|Python|
 |---|---|
-|Basics                                     | [Python Basics](Code/Python%20Basics%20Datenverarbeitung.py) |
-|[CREATE TABLE](Code/CREATE%20TABLE.sql)    | right-aligned |
-| col 2 is      | centered      |
-| zebra stripes | are neat      |
-
-- [T-SQL IF EXISTS](Code/IF%20EXISTS.sql)
-- [T-SQL PRIMARY KEY](Code/PRIMARY%20KEY.sql)
-- [T-SQL Spalte ändern](Code/Spalte%20%C3%A4ndern.sql)
-- [T-SQL INSERT INTO](Code/INSERT%20INTO.sql)
-- [T-SQL RANKING](Code/RANKING.sql)
-- [T-SQL uneindeutige Matches](Code/uneindeutige%20Matches.sql)
-- [T-SQL PIVOT](Code/Pivot.sql)
-- [T-SQL Textspalte aggregieren](Code/Textspalte%20aggregieren.sql)
-- [T-SQL Datumsliste erzeugen](Code/Datumsliste%20erzeugen.sql)
+|Basics                                      |                 [Basics](Code/Python%20Basics%20Datenverarbeitung.py) |
+|[CREATE TABLE](Code/CREATE%20TABLE.sql)                       |    |
+|[IF EXISTS](Code/IF%20EXISTS.sql)                             |    |
+|[PRIMARY KEY](Code/PRIMARY%20KEY.sql)                         |    |
+|[Spalte ändern](Code/Spalte%20%C3%A4ndern.sql)                |    |
+|[RANKING](Code/RANKING.sql)                                   |    |
+|[uneindeutige Matches](Code/uneindeutige%20Matches.sql)       |    |
+|[PIVOT](Code/Pivot.sql)                                       |    |
+|[Textspalte aggregieren](Code/Textspalte%20aggregieren.sql)   |    |
+|[Datumsliste erzeugen](Code/Datumsliste%20erzeugen.sql)       |    |
 ## 4. Datenanalyse
 - [Python Basics](Code/Python%20Basics%20Datenanalyse.py)
 - [Wie viel ist NULL?](Code/Wie%20viel%20ist%20NULL.py)
