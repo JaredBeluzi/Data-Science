@@ -14,12 +14,12 @@ https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html
 
 ## Entwicklungsumgebung erstellen, ändern und löschen
 ```
-mamba env list    # show list of environments 
-mamba create -n env_name    # create environment
-mamba activate env_name    # activate environment
-mamba deactivate    # deactivate environment 
+mamba env list                  # show list of environments 
+mamba create -n env_name        # create environment
+mamba activate env_name         # activate environment
+mamba deactivate                # deactivate environment 
 mamba install -n env_name jupyterlab -c conda-forge    # install a python package inside an environment from the outside
-mamba update -n env_name    # all update all packages inside an environment
+mamba update -n env_name        # all update all packages inside an environment
 mamba env remove -n env_name    # delete environment
 ```
 
