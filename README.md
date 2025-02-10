@@ -15,7 +15,7 @@
 |Tabellen matchen          |[uneindeutige Matches](Code/uneindeutige%20Matches.sql)<br/>[RANKING](Code/RANKING.sql)                   |                                                                       |
 |Spaltenfunktionen         |[Datumsfunktionen](Code/Datumsfunktionen.sql)                                                             |                                                                       |
 |Spalten aggregieren       |[PIVOT](Code/Pivot.sql)<br/>[Textspalte aggregieren](Code/Textspalte%20aggregieren.sql)                   |                                                                       |
-|Daten erzeugen            |[Datumsliste](Code/Datumsliste%20erzeugen.sql)                                                            |                                                                       |
+|Daten erzeugen            |[INSERT INTO](Code/INSERT%20INTO.sql)<br/>[Datumsliste](Code/Datumsliste%20erzeugen.sql)                  |                                                                       |
 ## 4. Datenanalyse
 - [Python Basics](Code/Python%20Basics%20Datenanalyse.py)
 - [Wie viel ist NULL?](Code/Wie%20viel%20ist%20NULL.py)
