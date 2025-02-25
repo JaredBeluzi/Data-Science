@@ -11,7 +11,7 @@
 |---|---|---|
 |Basics                    |[dynamischer SQL](Code/dynamischer%20SQL.sql)                                                             |[Python Basics](Code/Python%20Basics%20Datenverarbeitung.py)           |
 |Tabelle erzeugen          |[IF EXISTS](Code/IF%20EXISTS.sql)<br/>[CREATE TABLE](Code/CREATE%20TABLE.sql)                             |                                                                       |
-|Tabelle ändern            |[PRIMARY KEY](Code/PRIMARY%20KEY.sql)<br/>[Spalte ändern](Code/Spalte%20%C3%A4ndern.sql)                  |                                                                       |
+|Tabelle ändern            |[Indices](Code/Indices.sql)<br/>[Spalte ändern](Code/Spalte%20%C3%A4ndern.sql)                            |                                                                       |
 |Tabellen matchen          |[uneindeutige Matches](Code/uneindeutige%20Matches.sql)<br/>[RANKING](Code/RANKING.sql)                   |                                                                       |
 |Spaltenfunktionen         |[Datumsfunktionen](Code/Datumsfunktionen.sql)                                                             |                                                                       |
 |Spalten aggregieren       |[PIVOT](Code/Pivot.sql)<br/>[Textspalte aggregieren](Code/Textspalte%20aggregieren.sql)                   |                                                                       |
