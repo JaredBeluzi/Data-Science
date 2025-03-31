@@ -3,6 +3,7 @@
 import pandas as pd
 import pyodbc
 import sqlalchemy as sa
+#import os
 
 DRIVER = "ODBC Driver 18 for SQL Server"
 HOST = "XX.XX.XXX.XXX" # use SELECT CONNECTIONPROPERTY('local_net_address') to get the IP
