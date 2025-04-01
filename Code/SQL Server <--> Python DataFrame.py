@@ -25,11 +25,6 @@ engine = sa.create_engine(engine_url, future=True, fast_executemany=True)
 with engine.connect() as connection:
     print("Connection successful!")
 
-# test of you can execute query on server
-with engine.connect() as connection:
-    result = connection.execute("SELECT 1")
-    print(result.fetchone())  # Should print (1,)
-
 # importing data
 df = pd.read_sql(f"SELECT * FROM S_12345", engine)
 
