@@ -24,7 +24,7 @@ engine = sa.create_engine(engine_url, future=True, fast_executemany=True)
 
 # Verbindung über engine testen
 with engine.connect() as connection:
-    print("Connection successful!")
+    print("Verbindung mit dem SQL Server ist erfolgreich!")
 
 # Daten importieren
 df = pd.read_sql(f"SELECT * FROM S_12345", engine)
