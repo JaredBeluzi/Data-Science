@@ -1,14 +1,15 @@
 DECLARE @i VARCHAR(100); -- Laufvariable, die durch Spalte läuft
 DECLARE @SQL NVARCHAR(MAX); -- dynamischer SQL
 
-DECLARE Körser CURSOR FOR -- Cursor definieren auf eine Spalte
+-- Cursor definieren und öffnen
+DECLARE Körser CURSOR FOR 
 SELECT 
 	[Text]
 FROM dbo.ES_51505
 
 OPEN Körser;
 
-FETCH NEXT FROM Körser INTO @i; -- Fetch the first row
+FETCH NEXT FROM Körser INTO @i; -- erste Zeile in Cursor fetchen
 
 -- Durch Cursor loopen
 WHILE @@FETCH_STATUS = 0
@@ -16,14 +17,12 @@ BEGIN
     SET @SQL = N'
     SELECT ''' + @i + ''' AS a
 	';
-    
-    -- Execute the dynamic SQL
+
     EXEC sp_executesql @SQL;
     
-    -- Fetch the next row
-    FETCH NEXT FROM Körser INTO @i;
+    FETCH NEXT FROM Körser INTO @i; -- nächste Zeile fetchen
 END;
 
--- Clean up the cursor
+-- Cursor schlie0en
 CLOSE Körser;
 DEALLOCATE Körser;
