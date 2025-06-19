@@ -20,12 +20,9 @@ FROM	dbo.ES_51504
 SELECT
 	v_ID
 , Zeitraum_von
-,	CAST(ISNULL(DATEADD(day, -1, LEAD(Aufenthalt_von, 1) OVER (	PARTITION BY 	v_ID
-													,	RentAntr_ID
-													,	Bewertungsdatum
- 											ORDER BY 
-														Aufenthalt_von ASC)), 
-		Bewertungsdatum) AS Date)  AS Zeitraum_bis
+,	CAST(DATEADD(day, -1, LEAD(Aufenthalt_von, 1) OVER (	PARTITION BY 	v_ID
+									ORDER BY Aufenthalt_von ASC))
+	AS Date)  AS Zeitraum_bis
 ,	Cast(0 AS Int) AS Tage
 ,	Cast('-' AS VarChar(100)) AS Kategorie
 INTO	dbo.{Anzeigesicht}
