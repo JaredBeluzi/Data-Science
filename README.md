@@ -16,7 +16,7 @@
 |Spaltenfunktionen         |[Datumsfunktionen](Code/Datumsfunktionen.sql)                                                             |                                                                       |
 |Spalten aggregieren       |[PIVOT](Code/Pivot.sql)<br/>[Textspalte aggregieren](Code/Textspalte%20aggregieren.sql)                   |                                                                       |
 |Daten erzeugen            |[INSERT INTO](Code/INSERT%20INTO.sql)<br/>[Datumsliste](Code/Datumsliste%20erzeugen.sql)                  |                                                                       |
-- [Zeitüberschneidungen](Code/Zeit%C3%BCberschneidungen.sql)
+|Zeitüberschneidungen      |[erkennen]<br/>[entfernen](Code/Zeit%C3%BCberschneidungen.sql)                                            |                                                                       |
 ## 4. Datenanalyse
 - [Python Basics](Code/Python%20Basics%20Datenanalyse.py)
 - [Wie viel ist NULL?](Code/Wie%20viel%20ist%20NULL.py)
