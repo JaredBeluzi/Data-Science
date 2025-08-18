@@ -2,6 +2,8 @@ import pandas as pd
 import pyodbc
 import sqlalchemy as sa
 #import os # nur für environment Variablen
+# Man kann sehen welche Umgebungsvariablen man hat, mit dem Code:
+# print(os.environ)
 
 DRIVER = "ODBC Driver 18 for SQL Server"
 HOST = "XX.XX.XXX.XXX" 
