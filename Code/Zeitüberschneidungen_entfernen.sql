@@ -5,13 +5,13 @@
 SELECT DISTINCT
 	v_ID
 ,	Zeitraum_von
-INTO	dbo.{Anzeigesicht}
-FROM	dbo.ES_1
+INTO	dbo.ES_1
+FROM	dbo.ES_12345
 UNION	-- doppelte müssen herausgeworfen werden
 SELECT DISTINCT
 	v_ID
 ,	DateAdd(day, 1, Zeitraum_bis) AS Zeitraum_von
-FROM	dbo.ES_1
+FROM	dbo.ES_12345
 
 -----------------------------------------------------------
 --------- 2. Erstelle Tabelle mit Zeitabschnitten ---------
@@ -31,7 +31,7 @@ FROM	dbo.ES_1
 -- Dauer berechnen
 UPDATE	a
 SET 	a.Tage = DateDiff(day, Zeitraum_von, Zeitraum_bis) + 1
-FROM	dbo.{Anzeigesicht} AS a
+FROM	dbo.ES_2 AS a
 
 ----------------------------------------------------------
 ------------ 3. Zeitabschnitte kategorisieren ------------
@@ -39,7 +39,7 @@ FROM	dbo.{Anzeigesicht} AS a
 
 UPDATE	a
 SET	a.Kategorie = 'Käse'
-FROM	dbo.{Anzeigesicht} AS a
+FROM	dbo.ES_2 AS a
 INNER JOIN	dbo.ES_54321 AS b
 	ON a.v_ID = b.v_ID
 WHERE b.Nahrungsmittel = Käse
