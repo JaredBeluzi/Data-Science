@@ -6,12 +6,12 @@ SELECT DISTINCT
 	v_ID
 ,	Zeitraum_von
 INTO	dbo.{Anzeigesicht}
-FROM	dbo.ES_12345
+FROM	dbo.ES_1
 UNION	-- doppelte müssen herausgeworfen werden
 SELECT DISTINCT
 	v_ID
 ,	DateAdd(day, 1, Zeitraum_bis) AS Zeitraum_von
-FROM	dbo.ES_12345
+FROM	dbo.ES_1
 
 -----------------------------------------------------------
 --------- 2. Erstelle Tabelle mit Zeitabschnitten ---------
@@ -25,8 +25,8 @@ SELECT
 	AS Date)  AS Zeitraum_bis
 ,	Cast(0 AS Int) AS Tage
 ,	Cast('-' AS VarChar(100)) AS Kategorie
-INTO	dbo.{Anzeigesicht}
-FROM	dbo.ES_12334
+INTO	dbo.ES_2
+FROM	dbo.ES_1
 
 -- Dauer berechnen
 UPDATE	a
