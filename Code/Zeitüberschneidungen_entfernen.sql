@@ -11,7 +11,7 @@ UNION	-- doppelte müssen herausgeworfen werden
 SELECT DISTINCT
 	v_ID
 ,	DateAdd(day, 1, Zeitraum_bis) AS Zeitraum_von
-FROM	dbo.ES_51504
+FROM	dbo.ES_12345
 
 -----------------------------------------------------------
 --------- 2. Erstelle Tabelle mit Zeitabschnitten ---------
